@@ -1,9 +1,10 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 class AuthService {
-  static const _baseUrl = 'https://shmapp.online/api';
+  static final _baseUrl = '${dotenv.env['host']}/api';
   static const _tokenKey = 'auth_token';
 
   static Future<void> saveToken(String token) async {

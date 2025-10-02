@@ -3,9 +3,10 @@ import 'package:http/http.dart' as http;
 import '../data/sensor.dart';
 import '../data/vehicle.dart';
 import 'auth_service.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 class RestService {
-  static const _baseUrl = "https://shmapp.online/api";
+  static final _baseUrl = "${dotenv.env['host']}/api";
 
   static Future<List<Sensor>> fetchSensors() async {
     final token = await AuthService.getToken();

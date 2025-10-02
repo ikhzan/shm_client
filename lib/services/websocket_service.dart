@@ -1,7 +1,8 @@
 import 'package:web_socket_channel/web_socket_channel.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 class WebSocketService {
-  final String wsUrl = 'ws://shmapp.online/ws/ttn/';
+  static final String wsUrl = dotenv.env['ws'] ?? '';
   late WebSocketChannel channel;
 
   void connect({
