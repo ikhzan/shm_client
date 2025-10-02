@@ -81,7 +81,7 @@ class SensorsScreen extends StatelessWidget {
             return const Center(child: CircularProgressIndicator());
           }
           if (snapshot.hasError) {
-            return Center(child: Text('Error: ${snapshot.error}'));
+            return Center(child: Text('Error cannot load data'));
           }
 
           final endDevices = snapshot.data!['end_devices'] as List;

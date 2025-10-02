@@ -40,7 +40,7 @@ class _VehicleDetailScreenState extends State<VehicleDetailScreen> {
             return const Center(child: CircularProgressIndicator());
           }
           if (snapshot.hasError) {
-            return Center(child: Text('Error: ${snapshot.error}'));
+            return Center(child: Text('Error cannot load data'));
           }
           if (!snapshot.hasData) {
             return const Center(child: Text('No vehicle data found'));
